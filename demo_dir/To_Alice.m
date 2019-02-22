@@ -5,6 +5,7 @@
 % the bass clef or lower part.  A duration of 1 corresponds to an eighth note
 % and a note value of 0 is a rest.
 
+
 clear, clc
 t = [ 56 55   56 55 56 51 54 52   49 0 40 44 49   51 0 44 48 51   52 0 44 56 55 ...
       56 55 56 51 54 52   49 0 40 44 49   51 0 44 52 51   49 0 51 52 54   56 47 57 56 ...
@@ -30,4 +31,4 @@ bdur = [ 1   3   .5 .5 .5 .5 1   .5 .5 .5 .5 1   .5 .5 .5 .5 1 ...
          3   .5 .5 .5 .5 1   .5 .5 .5 .5 1   .5 .5 .5 .5 1   3 ...
         .5 .5 .5 .5 1   .5 .5 .5 .5 1   .5 .5 .5 .5];
     
-Play(t,tdur,b,bdur) 
+play(t,tdur,b,bdur) 

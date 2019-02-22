@@ -50,4 +50,6 @@ for kk = 1:length(bass)
 end
 
 music_vector = treble_vector + bass_vector;      % treble and bass vector combination
-sound( music_vector, fs )                        % generate sound
+sound( music_vector, fs );                        % generate sound
+disp("Done");   % From here we know that sound is non-blocking function.
+sound( music_vector, fs);
