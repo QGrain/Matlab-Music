@@ -14,7 +14,7 @@ Create each beat of the sound. This API is designed with consideration of sound'
 
 
 
-**Return**: A array containing the sample of a sound. It's length is dependent on the sampling rate.
+**Return**: A array containing the samples of a sound. It's length is dependent on the sampling rate.
 
 
 
