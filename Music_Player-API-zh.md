@@ -25,3 +25,5 @@ global sampling_rate = 40000 % According to Sampling Theorem, set rate with 2*20
 ### 音效
 ### 简谱解析
 ### 图形界面
+
+## 乐器模拟器
