@@ -1,45 +1,44 @@
-%Ëæ»úÐòÁÐÒôÀÖ! v0.3 
-%golden blue, 2010-6-23 
-%matlab version: 7.1 
-close all;clear all;clc; 
+close all;
+% clear all;
+clc; 
 
-%»ù±¾Éè¶¨ ==-- 
-sample_rate = 16000; %²ÉÑùÂÊ 16 kHz 
-base_note = 262; %»ù×¼Òô C 
-x = [0:1/sample_rate:0.2-1/sample_rate]; %µ¥¸öÒô·ûµÄÊ±¼ä 0.2Ãë 
-scale = [1 3 5 8 10 13 15 17 20 22 25 27]; %Ö¸¶¨Ò»×éÒô·û (ÒÔ°ëÒôÎªµ¥Î») 
-envelope1 = sin(2.*pi.*2.5.*x); %ÈýÖÖ°üÂç 
+% Variables Declaration
+sample_rate = 16000; % Sample Rate 16 kHz 
+base_note = 262; % Reference Freq 
+x = 0 : 1/sample_rate : 0.2-1/sample_rate; % Set Each Beat to  
+scale = [1 3 5 8 10 13 15 17 20 22 25 27]; % The scale 
+envelope1 = sin(2.*pi.*2.5.*x); %ï¿½ï¿½ï¿½Ö°ï¿½ï¿½ï¿½ 
 envelope2 = cos(2.*pi.*1.25.*x); 
 envelope3 = exp(-20.*x); 
 plot(envelope1); 
 
-%Éú³ÉËæ»úÐòÁÐÒô ==-- 
+% Random List 
 audio = []; 
-for ii = 1:20 %¾ÍÉú³É¸ö20×é°É 
-notes = scale(randperm(length(scale)))-1; %ÓÃrandperm()½«Òô·û×éËæ»úÅÅÁÐ 
-freqs = base_note.* 2.^(notes./12); %¼ÆËã¸÷ÒôµÄÆµÂÊ 
+for ii = 1:20 %ï¿½ï¿½ï¿½ï¿½É¸ï¿½20ï¿½ï¿½ï¿½ 
+notes = scale(randperm(length(scale)))-1; %ï¿½ï¿½randperm()ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
+freqs = base_note.* 2.^(notes./12); %ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æµï¿½ï¿½ 
 note_group = []; 
 for i = 1:length(freqs) 
-y = sin(freqs(i).*2.*pi.*x).*envelope1; %²¨ÐÎ=ÕýÏÒ²¨*°üÂç 
+y = sin(freqs(i).*2.*pi.*x).*envelope1; %ï¿½ï¿½ï¿½ï¿½=ï¿½ï¿½ï¿½Ò²ï¿½*ï¿½ï¿½ï¿½ï¿½ 
 note_group = [note_group y ]; 
 plot(y); 
 end 
 audio = [audio note_group]; 
 end 
 
-%Ð§¹û 1: overdrive ==-- 
-od_gain = 10; %ÔöÒæ ( >=1 ) 
+%Ð§ï¿½ï¿½ 1: overdrive ==-- 
+od_gain = 10; %ï¿½ï¿½ï¿½ï¿½ ( >=1 ) 
 audio = audio .* od_gain; 
 audio(find(audio > 1)) = 1; 
 audio(find(audio < -1)) = -1; 
 
-%Ð§¹û 2: stereo delay ==-- 
-d_time = 1; %ÑÓ³ÙÊ±¼ä(µ¥Î»ÎªÒô·ûÊ±ÖµµÄ±¶Êý) 
+%Ð§ï¿½ï¿½ 2: stereo delay ==-- 
+d_time = 1; %ï¿½Ó³ï¿½Ê±ï¿½ï¿½(ï¿½ï¿½Î»Îªï¿½ï¿½ï¿½ï¿½Ê±Öµï¿½Ä±ï¿½ï¿½ï¿½) 
 delay = zeros(1,length(x).*d_time); 
 audio =[ [audio delay];[delay audio] ]'; 
 
-%²¥·Å ==-- 
+%ï¿½ï¿½ï¿½ï¿½ ==-- 
 player = audioplayer(audio,sample_rate); 
 play(player); 
-disp('Í£Ö¹²¥·ÅÇëÖ´ÐÐ:') 
+disp('Í£Ö¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö´ï¿½ï¿½:') 
 disp('stop(player)') 
