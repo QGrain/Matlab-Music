@@ -32,6 +32,6 @@ This compositor is responsible for mixing the array of sounds (the return array 
 
 - arr_sounds: The array of sounds
 - beat_time: How long a period of time one beat takes.
-- cut_mode: `'cut'` , `'mix'` and `add`. Cut mode cuts out the samples out of the range of one beat.
+- cut_mode: `'cut'` , `'mix'` and `add`. Cut mode cuts out the samples beyond the range of one beat. Mix aims at a more natural transition between 2 beats. Add means direct adding operation.
 
 **Return**: A array of the song samples.
