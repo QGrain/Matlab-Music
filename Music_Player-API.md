@@ -1,6 +1,10 @@
 # Matlab Music Palyer APIs
 
-## soundGene
+
+
+## Core Functions
+
+### soundGene
 
 Create each beat of the sound. This API is designed with consideration of sound's coherence. So remember that the generator can create sound array whose duration is longer than a beat. 
 
@@ -9,22 +13,24 @@ Create each beat of the sound. This API is designed with consideration of sound'
 - envelope: An envelope array.
 - one_sec_index: The index pointing at the envelop's one second point. Because the envelope relies on the absolute time, not on the beat time so this is important.
 - harm_coef: Harmonic coefficient array.
-- key: Frequency of this s,ound. Function returns zeros when key `NULL`.
+- key: Frequency of this beat of sound. Function returns zeros when key `NULL`, which help express the short pause in the song.
 - fs: Sampling frequency.
 
 
 
-**Return**: A array containing the samples of a sound. It's length is dependent on the sampling rate.
+**Return**: A array containing the samples of a sound. It's length is dependent on the sampling rate and length of envelope vector.
+
+**Note**: The envelope array might represent time less than a sec. So `one_sec_index` might be greater than `length(envelope)`.
 
 
 
-The implement of the function's main responsibility is to adapt the envelope array to the sample rate.
+The implement of the function's main responsibility is to adapt the envelope array to the sample rate and synthesize a beat of sound.
 
 For the same `envelope` and `one_sec_index`, the `soundGene` 's return should be the same size.
 
 
 
-## audioVectComp
+### audioVectComp
 
 This compositor is responsible for mixing the array of sounds (the return array of the soundGene) into a song vector.
 
@@ -32,6 +38,6 @@ This compositor is responsible for mixing the array of sounds (the return array 
 
 - arr_sounds: The array of sounds
 - beat_time: How long a period of time one beat takes.
-- cut_mode: `'cut'` , `'mix'` and `add`. Cut mode cuts out the samples beyond the range of one beat. Mix aims at a more natural transition between 2 beats. Add means direct adding operation.
+- comp_mode: `'cut'` , `'mix'` or `add`. Cut mode cuts out the samples beyond the range of one beat so that there won't be interaction between two consecutive beats. Mix aims at a more natural transition between 2 beats. Add means direct adding operation.
 
 **Return**: A array of the song samples.
