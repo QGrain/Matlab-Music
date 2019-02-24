@@ -39,10 +39,6 @@ end
 
 ### 音轨合成
 
-**参数**:
-
-**返回值**:
-
 
 
 ### 播放
@@ -93,12 +89,21 @@ global REF_NOTE		% Base key，'Middle C' for example
 global SAMPLE_RATE	% Set sampling rate, '44100' for example
 global SPEED		% Note number in one minute, '90' for example
 global GAIN			% Gain for the volume, '2' for example
-
+global STYLE		% Style, 'Heavy mental' for example
 
 %More to be figured out...
 ```
 
 **说明**：
 
-- GUI中设置`play speed`选项，与SPEED对应
 
+
+## 图形界面
+
+- 播放速度，增益，风格等选项
+
+- 乐曲选择下拉栏
+  - 左侧显示乐曲简介，包括曲名，歌手，作曲家以及**推荐speed**，**推荐style**
+- 乐器选择下拉栏
+  - 左侧显示乐器的图片
+- To be complete
