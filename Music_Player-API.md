@@ -4,7 +4,13 @@
 
 ## Core Functions
 
-### soundGene
+With the help of these four functions below, we can build a complete ecosystem of generating music featuring all kinds of instruments.
+
+### envelopeScan
+
+### harmCoefScan
+
+### beatGene
 
 Create each beat of the sound. This API is designed with consideration of sound's coherence. So remember that the generator can create sound array whose duration is longer than a beat. 
 
@@ -26,13 +32,13 @@ Create each beat of the sound. This API is designed with consideration of sound'
 
 The implement of the function's main responsibility is to adapt the envelope array to the sample rate and synthesize a beat of sound.
 
-For the same `envelope` and `one_sec_index`, the `soundGene` 's return should be the same size.
+For the same `envelope` and `one_sec_index`, the `beatGene` 's return should be the same size.
 
 
 
 ### audioVectComp
 
-This compositor is responsible for mixing the array of sounds (the return array of the soundGene) into a song vector.
+This compositor is responsible for mixing the array of sounds (the return array of the beatGene) into a song vector.
 
 **Parameters**:
 
