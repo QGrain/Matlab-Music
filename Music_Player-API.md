@@ -1,7 +1,5 @@
 # Matlab Music Palyer APIs
 
-
-
 ## Core Functions
 
 With the help of these three functions below, we can build a complete ecosystem of generating music featuring all kinds of instruments.
