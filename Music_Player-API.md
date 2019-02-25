@@ -4,11 +4,22 @@
 
 ## Core Functions
 
-With the help of these four functions below, we can build a complete ecosystem of generating music featuring all kinds of instruments.
+With the help of these three functions below, we can build a complete ecosystem of generating music featuring all kinds of instruments.
 
-### envelopeScan
+### InstrumentPropertyScan
 
-### harmCoefScan
+This function provides the `harm_coef`, `envelope` and `one_sec_index` for beatGene. It takes a audio filename as parameter.
+
+**Parameters**
+
+- audio_filename: The filename of audio file to be processed.
+
+**Returns**
+
+- harm_coef
+- envelope
+- one_sec_index: It is actually same value as `fs` returned by `audioread`.
+
 
 ### beatGene
 
@@ -24,7 +35,7 @@ Create each beat of the sound. This API is designed with consideration of sound'
 
 
 
-**Return**: A array containing the samples of a sound. It's length is dependent on the sampling rate and length of envelope vector.
+**Returns**: A array containing the samples of a sound. It's length is dependent on the sampling rate and length of envelope vector.
 
 **Note**: The envelope array might represent time less than a sec. So `one_sec_index` might be greater than `length(envelope)`.
 
@@ -46,4 +57,4 @@ This compositor is responsible for mixing the array of sounds (the return array 
 - beat_time: How long a period of time one beat takes.
 - comp_mode: `'cut'` , `'mix'` or `add`. Cut mode cuts out the samples beyond the range of one beat so that there won't be interaction between two consecutive beats. Mix aims at a more natural transition between 2 beats. Add means direct adding operation.
 
-**Return**: A array of the song samples.
+**Returns**: A array of the song samples.
