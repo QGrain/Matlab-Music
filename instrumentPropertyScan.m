@@ -1,4 +1,7 @@
 function [harm_coef, avg_envelope, one_sec_index] = instrumentPropertyScan(filename)
+    % Configuration
+    firstKHarmonics = 5;
+
     % Get the sample array and sampling frequency.
     [audio, one_sec_index] = audioread(filename);
     audio = audio(:,1); % Get data of only one tunnel
@@ -39,8 +42,8 @@ function [harm_coef, avg_envelope, one_sec_index] = instrumentPropertyScan(filen
     toSortPeaks = horzcat(peaks, oriLocs);
     sortedPeaks = transpose(sortrows(toSortPeaks, 1, 'descend'));
     sortedL = length(sortedPeaks);
-    if sortedL > 6
-        sortedL = 6;
+    if sortedL > firstKHarmonics
+        sortedL = firstKHarmonics;
     end
     harm_coef = sortedPeaks(:, 1:sortedL);
 end

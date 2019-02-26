@@ -39,7 +39,7 @@ global sampling_rate = 40000 % According to Sampling Theorem, set rate with 2*20
 
 ## 核心函数
 
-### soundGene (声音发生器)
+### beatGene (声音发生器)
 
 产生一拍的音. 这个API的设计思路是基于"保证声音的连贯性"这一点的. 所以记住, 这个发生器可能产生时长超过一拍的采样向量.
 

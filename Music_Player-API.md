@@ -33,7 +33,7 @@ Create each beat of the sound. This API is designed with consideration of sound'
 
 
 
-**Returns**: A array containing the samples of a sound. It's length is dependent on the sampling rate and length of envelope vector.
+**Returns**: A array containing the samples of a sound. Its length is dependent on the sampling rate and length of envelope vector.
 
 **Note**: The envelope array might represent time less than a sec. So `one_sec_index` might be greater than `length(envelope)`.
 
