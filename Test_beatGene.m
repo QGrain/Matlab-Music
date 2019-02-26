@@ -1,5 +1,5 @@
 [harm_coef, envelope, one_sec_index] = instrumentPropertyScan('pianoC.mp3');
-fs = 22000; 
+fs = 300000; 
 audio_array = beatGene(envelope, one_sec_index, harm_coef, 1046, fs);
 sound(audio_array, fs);
 
