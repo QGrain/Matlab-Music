@@ -36,10 +36,23 @@ end
 **返回值**：single_note, 
 
 
+### 和弦
+```matlab
+function chord = chordComb(notes_vector, time_offset, note_num)
+	vector_size = size(notes_vector);
+	chord_len = vector_size[1];
+	new_chord = zeros(1, chord_len + sum(time_offset));
+	new_chord_len = length(cnew_chord);
+
+	for i = 1:new_chord_len
+		new_chord = 
 
 ### 音轨合成
-
-
+```matlab
+function audio = audioGene(audio, sequence)
+	audio = [audio sequence];
+end
+```
 
 ### 播放
 
