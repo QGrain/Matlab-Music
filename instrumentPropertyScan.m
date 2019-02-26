@@ -5,12 +5,18 @@ function [harm_coef, avg_envelope, one_sec_index] = instrumentPropertyScan(filen
     % Get the sample array and sampling frequency.
     [audio, one_sec_index] = audioread(filename);
     audio = audio(:,1); % Get data of only one tunnel
+    
+    % DEBUG
+    figure(2);
+    plot(audio);
 
     % Get the standarized envelope
-    [upper_envelope, lower_envelope] = envelope(audio);
-    avg_envelope = (upper_envelope - lower_envelope);
+%     [upper_envelope, lower_envelope] = envelope(audio, 1000, 'rms');
+    [upper_envelope, lower_envelope] = envelope(audio, 100, 'rms');
+%     avg_envelope = (upper_envelope - lower_envelope);
+    avg_envelope = upper_envelope;
     avg_envelope = avg_envelope / max(avg_envelope); % Standarization
-    
+        
     % Fourier Transformation
     fs = one_sec_index;
     Y = fft(audio); % Y are complexes
@@ -46,5 +52,8 @@ function [harm_coef, avg_envelope, one_sec_index] = instrumentPropertyScan(filen
         sortedL = firstKHarmonics;
     end
     harm_coef = sortedPeaks(:, 1:sortedL);
+    
+    % DEBUG
+    disp(harm_coef);
 end
 
