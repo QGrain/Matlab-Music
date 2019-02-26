@@ -1,5 +1,7 @@
 # Matlab音乐播放器API文档
 
+[TOC]
+
 ## 文件关系
 
 - 功能函数`FunctionName.m`，按照功能命名
@@ -48,7 +50,7 @@ function chord = chordComb(notes_vector, time_offset, note_num)
 		new_chord = 
 
 ### 音轨合成
-```matlab
+​```matlab
 function audio = audioGene(audio, sequence)
 	audio = [audio sequence];
 end
