@@ -1,2 +1,2 @@
-# Usful site for sound materials
+# Useful site for sound materials
 http://www.aigei.com/sound/
