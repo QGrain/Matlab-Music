@@ -7,8 +7,8 @@ function [harm_coef, avg_envelope, one_sec_index] = instrumentPropertyScan(filen
     audio = audio(:,1); % Get data of only one tunnel
     
     % DEBUG
-    figure(2);
-    plot(audio);
+%     figure(2);
+%     plot(audio);
 
     % Get the standarized envelope
 %     [upper_envelope, lower_envelope] = envelope(audio, 1000, 'rms');

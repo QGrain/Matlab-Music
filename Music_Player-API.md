@@ -52,8 +52,10 @@ This compositor is responsible for mixing the array of sounds (the return array 
 
 **Parameters**:
 
-- `arr_sounds`: The array of sounds
-- `beat_time`: How long a period of time one beat takes.
+- `song_array`: The composited audio samples array.
+
+- `beat_arr`: The array of one beat.
+- `beat_time`: How long a period of time this beat takes before next beat sound.
 - `fs`: The targeting sampling frequency.
 - `comp_mode`: `'cut'` , `'mix'` or `add`. CUT mode cuts out the samples beyond the range of one beat so that there won't be interaction between two consecutive beats. MIX aims at a more natural transition between 2 beats. ADD means direct adding operation.
 - `last_end_index`: It's a variable maintaining the continuity between different calls of this function, which helps figure out from where the concatenation starts.
