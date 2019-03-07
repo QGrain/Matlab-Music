@@ -11,8 +11,8 @@ for note = song_book
     [last_end_index, song_array] = audioVectComp(song_array, beat_array, beat_time, fs, 'CUT', last_end_index);
 end
 
-% sound(song_array, fs);
-audiowrite('test.wav', song_array, fs);
+sound(song_array, fs);
+audiowrite('test.wav', song_array, fs);  % Create a audio file
 
     
     
