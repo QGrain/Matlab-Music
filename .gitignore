@@ -1,3 +1,4 @@
 *.asv
 *.swp
 *.m~
+*~   # Ignore vim temp files.
