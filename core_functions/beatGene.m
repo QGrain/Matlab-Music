@@ -1,10 +1,10 @@
-function beat_array = beatGene(envelope, one_sec_index, harm_coef, key, fs)
+function beat_array = beatGene(avg_envelope, one_sec_index, harm_coef, key, fs)
     % To adapt the envelope
-    len = length(envelope);
+    len = length(avg_envelope);
     newLen = round(len/one_sec_index*fs);
     transformation_indexes = ceil((1:newLen)*one_sec_index/fs);  % Avoid 0 being index.
-    envelope = [envelope; envelope(end)];  % Avoid indexes out of range.
-    adapted_envelope = transpose(envelope(transformation_indexes));
+    avg_envelope = [avg_envelope; avg_envelope(end)];  % Avoid indexes out of range.
+    adapted_envelope = transpose(avg_envelope(transformation_indexes));
     
    	% Generate the sound 
     base_vector = zeros([1 newLen]);
