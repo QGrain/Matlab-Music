@@ -65,3 +65,5 @@ This compositor is responsible for mixing the array of sounds (the return array 
 - `last_end_index`: Explained already.
 - `song_array`: The composited audio samples array. 
 
+
+
