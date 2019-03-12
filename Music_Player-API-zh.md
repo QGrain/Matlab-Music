@@ -65,10 +65,8 @@ D#2_8 N___4
 - 输入参数: `filename`，是乐谱文本`Music_Book.txt`的相对或绝对路径。
 - 输出参数: `[basic_info book_single]`
   - `basic_info`是一个3x1的矩阵，对应文本第一、二行。
-  - `book_single`是一个结构体数组，有四个成员:
-    - note_base: 音名
-    - note_offset: 音名对应的升降，如`#`, `b`, `-`.
-    - scale: 八度名，取值0-9
+  - `book_single`是一个结构体数组，有两个成员:
+    - key: 频率
     - time: 1表示全音符，2表示二分音符，依此类推。
 
 ```matlab
