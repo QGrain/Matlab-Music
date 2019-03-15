@@ -6,17 +6,12 @@ function [harm_coef, avg_envelope, one_sec_index] = instrumentPropertyScan(filen
     [audio, one_sec_index] = audioread(filename);
     audio = audio(:,1); % Get data of only one tunnel
     
-    % DEBUG
-%     figure(2);
-%     plot(audio);
-
-    % Get the standarized envelope
-%     [upper_envelope, lower_envelope] = envelope(audio, 1000, 'rms');
     [upper_envelope, lower_envelope] = envelope(audio, 100, 'rms');
-%     avg_envelope = (upper_envelope - lower_envelope);
+
     avg_envelope = upper_envelope;
     avg_envelope = avg_envelope / max(avg_envelope); % Standarization
-        
+    plot(avg_envelope);
+    
     % Fourier Transformation
     fs = one_sec_index;
     Y = fft(audio); % Y are complexes
