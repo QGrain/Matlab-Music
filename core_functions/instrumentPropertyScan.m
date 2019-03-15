@@ -6,53 +6,65 @@ function [harm_coef, avg_envelope, one_sec_index] = instrumentPropertyScan(filen
     [audio, one_sec_index] = audioread(filename);
     audio = audio(:,1); % Get data of only one tunnel
     
-    [upper_envelope, lower_envelope] = envelope(audio, 100, 'rms');
-
-    avg_envelope = upper_envelope;
+    % Multiple ways to get the envelope 
+    % [upper_envelope, lower_envelope] = envelope(audio, ceil(one_sec_index/500), 'rms');
+    [upper_envelope, lower_envelope] = envelope(audio, ceil(one_sec_index/500), 'peak');
+    % [upper_envelope, lower_envelope] = envelope(audio);
+    
+    avg_envelope = (upper_envelope - lower_envelope); % Kick out the DC component
     avg_envelope = avg_envelope / max(avg_envelope); % Standarization
-    plot(avg_envelope);
     
     % Fourier Transformation
     fs = one_sec_index;
     Y = fft(audio); % Y are complexes
     L = length(audio);
     f = fs*(0:(L/2))/L;
-    P2 = abs(Y)/L;  % Modulus of complexes
-    P1 = P2(1:L/2+1);
-    P1(2:end-1) = 2*P1(2:end-1);
+    % P2 = abs(Y)/L;  % Modulus of complexes
+    % P2 = Y/L
+    P2 = Y(1:L/2+1);  % Phase maintainer
+    P1 = 2*abs(P2(1:end-1));
+    P1(1) = P1(1)/2;
     
     % Find the optimal distance
     [maxValue, index] = max(P1);
 	dist = f(ceil(index*0.9));
     
-    % DEBUG
-    plot(f, P1);
-    
-    % Find the possible harmonics
-    [peaks, oriLocs] = findpeaks(P1, f, 'MinPeakDistance', dist);
+    % Find the possible harmonics and their location
+    [peaks, oriLocs] = findpeaks(P1, 1:length(P1), 'MinPeakDistance', dist);
+    % The corresponding frequencies and phase
+    freqsOfPeaks = f(oriLocs);
+    phasesOfPeaks = angle(P2(oriLocs));
     
     % Transpose
     size_peaks = size(peaks);
     if size_peaks(1) == 1
         peaks = transpose(peaks);
     end
-    size_oriLocs = size(oriLocs);
-    if size_oriLocs(1) == 1
-        oriLocs = transpose(oriLocs);
+    size_freqs = size(freqsOfPeaks);
+    if size_freqs(1) == 1
+        freqsOfPeaks = transpose(freqsOfPeaks);
+    end
+	size_phase = size(phasesOfPeaks);
+    if size_phase(1) == 1
+        phasesOfPeaks = transpose(phasesOfPeaks);
     end
 
     % Get the harmonics
     peaks = peaks/maxValue;   % Standarization
-    toSortPeaks = horzcat(peaks, oriLocs);
+    toSortPeaks = horzcat(peaks, freqsOfPeaks, phasesOfPeaks);
     sortedPeaks = transpose(sortrows(toSortPeaks, 1, 'descend'));
-    sortedL = length(sortedPeaks);
-    if sortedL > firstKHarmonics
-        sortedL = firstKHarmonics;
-    end
+    sortedL = min([length(sortedPeaks) firstKHarmonics]);
     harm_coef = sortedPeaks(:, 1:sortedL);
     
     % DEBUG
-    disp(harm_coef(2, 1));
+    DEBUG = 0;
+    if DEBUG == 1
+        figure(1);
+        plot(audio/max(audio));
+        hold on
+        plot(avg_envelope)
+        hold off
+    end
     
 end
 
