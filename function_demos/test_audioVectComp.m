@@ -12,7 +12,16 @@ for note = song_book
 end
 
 sound(song_array, fs);
-audiowrite('test.wav', song_array, fs);  % Create a audio file
+
+DEBUG = 1;
+if DEBUG == 1
+    figure(1);
+    plot(song_array);
+    hold on
+    plot(avg_envelope)
+    hold off
+end
+%audiowrite('test.wav', song_array, fs);  % Create a audio file
 
     
     
