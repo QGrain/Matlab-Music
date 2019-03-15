@@ -30,6 +30,9 @@ function [harm_coef, avg_envelope, one_sec_index] = instrumentPropertyScan(filen
     [maxValue, index] = max(P1);
 	dist = f(ceil(index*0.9));
     
+    % DEBUG
+    plot(f, P1);
+    
     % Find the possible harmonics
     [peaks, oriLocs] = findpeaks(P1, f, 'MinPeakDistance', dist);
     
@@ -54,6 +57,7 @@ function [harm_coef, avg_envelope, one_sec_index] = instrumentPropertyScan(filen
     harm_coef = sortedPeaks(:, 1:sortedL);
     
     % DEBUG
-    disp(harm_coef);
+    disp(harm_coef(2, 1));
+    
 end
 
