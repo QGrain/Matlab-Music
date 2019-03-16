@@ -2,13 +2,14 @@ function [harm_coef, avg_envelope, one_sec_index] = instrumentPropertyScan(filen
     % Configuration
     firstKHarmonics = 5;
 
+    disp(filename);
     % Get the sample array and sampling frequency.
     [audio, one_sec_index] = audioread(filename);
     audio = audio(:,1); % Get data of only one tunnel
     
     % Multiple ways to get the envelope 
     % [upper_envelope, lower_envelope] = envelope(audio, ceil(one_sec_index/500), 'rms');
-    [upper_envelope, lower_envelope] = envelope(audio, ceil(one_sec_index/500), 'peak');
+    [upper_envelope, lower_envelope] = envelope(audio, ceil(one_sec_index/500), 'rms');
     % [upper_envelope, lower_envelope] = envelope(audio);
     
     avg_envelope = (upper_envelope - lower_envelope); % Kick out the DC component

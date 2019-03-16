@@ -19,6 +19,7 @@ function beat_array = beatGene(avg_envelope, one_sec_index, harm_coef, key, fs)
             phase = harm_coef(3, col_index);
             base_vector = base_vector + coef*sin(angle_freq*time_vector+phase);
         end
+    end
     base_vector = base_vector .* adapted_envelope;
 %     disp(size(base_vector));
 %     disp(size(adapted_envelope));

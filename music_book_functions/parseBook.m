@@ -33,6 +33,10 @@ function book_single_beat = book_single_beat(filename)
     
     %split the string into single beat by ' '.
     book_cells = regexp(book, ' ', 'split');
+    book_cells = book_cells(~cellfun('isempty', book_cells));
+    
+    % DEBUG
+    disp(book_cells);
     
     for j = 1:length(book_cells)
         [key envType] = transformKey(book_cells{j}(1), book_cells{j}(2), book_cells{j}(3));
@@ -41,7 +45,6 @@ function book_single_beat = book_single_beat(filename)
         book_single_beat(j).isChord = isChord(book_cells{j}(4));   % When the fourth character isn't '_', then it's chord
         book_single_beat(j).time = getTime(str2num(book_cells{j}(5)), basic_info);
     end
-    
 
 end
 
@@ -107,7 +110,11 @@ end
 
 function time = getTime(timeLabel, basic_info)
     % This function converts the timeLabel into time lantency
-    time = 60.0 / basic_info(1) * 2^(1 - timeLabel) / basic_info(3);
+    if timeLabel == 0
+        time = 0;
+    else
+        time = 60.0 / basic_info(1) * 2^(1 - timeLabel);
+    end
 end
     
     

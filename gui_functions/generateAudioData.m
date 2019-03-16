@@ -1,6 +1,6 @@
 function [data_path] = generateAudioData(source_music_book)
     % Fetching environment values
-    config_json = jsondecode(fileread('../matlab_music_config.json'));
+    config_json = jsondecode(fileread('matlab_music_config.json'));
     
     fs = config_json.fs; 
     if ~fs
@@ -15,7 +15,7 @@ function [data_path] = generateAudioData(source_music_book)
     instrument = 'piano_standard';
     
     sourcePathComponents = regexp(source_music_book, '/', 'split');
-    song_path = strcat(root_path, 'song_data', sourcePathComponents(end), '.mp3');
+    song_path = strcat(root_path, 'song_data/', sourcePathComponents(end), '.mat');
     
     % Iterate over source_music_book and generate the sound
     % PS: Bare those special circumstances in mind!
@@ -29,16 +29,23 @@ function [data_path] = generateAudioData(source_music_book)
     for beat_info = beats_array
         [harm_coef, avg_envelope, one_sec_index] = envType2Parameters(beat_info.envType, instrument, root_path);
         [ last_end_index, audio_data ] = audioVectComp( ...
-            audio_array, ...
-            beatGene(avg_envelope, one_sec_index, harm_coef, key, fs), ...
+            audio_data, ...
+            beatGene(avg_envelope, one_sec_index, harm_coef, beat_info.key, fs), ...
             beat_info.time, ...
+            fs, ...
             'cut', ...
             last_end_index ...
         );
     end
     
-    save(song_path, audio_data);
+    % disp(song_path);
+    sound(audio_data, fs);
+    plot(audio_data);
+    
+    save(song_path, 'audio_data');
     data_path = song_path;
+    
+
     % DEBUG
     DEBUG = 1;
     if DEBUG
@@ -55,6 +62,11 @@ function [harm_coef, avg_envelope, one_sec_index] = envType2Parameters(envType, 
     secondChar = num2str(ceil(envType/2) - firstChar);
     firstChar = num2str(firstChar);
     
+    % DEBUG
+    disp('next:');
+    disp(envType);
+    disp(strcat(firstChar, secondChar));
+    
     % React accordingly to either circumstances.
     asset_path = strcat(asset_path, firstChar, secondChar, '.mat');
     if exist(asset_path, 'file')
@@ -65,12 +77,16 @@ function [harm_coef, avg_envelope, one_sec_index] = envType2Parameters(envType, 
     else
         sound_materials_path = strcat(sound_materials_path, firstChar, secondChar, '.mp3');
         [harm_coef, avg_envelope, one_sec_index] = instrumentPropertyScan(sound_materials_path);
-        % save(asset_path, 'harm_coef', 'avg_envelope', 'one_sec_index');
+        save(asset_path, 'harm_coef', 'avg_envelope', 'one_sec_index');
     end
     
+    % DEBUG
     DEBUG = 1;
     if DEBUG
-        disp([[harm_coef, avg_envelope, one_sec_index]])
+        %plot(avg_envelope);
+%         disp(harm_coef);
+%         disp(one_sec_index);
+%         disp(envType);
     end
 end
         
