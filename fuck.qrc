@@ -1,0 +1,13 @@
+<!DOCTYPE RCC><RCC version="1.0">
+ <qresource>
+     <file>images/quick.jpg</file>
+     <file>images/slow.jpg</file>
+     <file>images/test.jpg</file>
+     <file>images/test1.jpg</file>
+     <file>images/play.jpg</file>
+     <file>images/pause.jpg</file>
+     <file>images/control.jpg</file>
+     <file>images/stop.jpg</file>
+    <file>images/back.jpg</file>
+ </qresource>
+ </RCC>
