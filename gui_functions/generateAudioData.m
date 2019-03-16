@@ -38,16 +38,14 @@ function [data_path] = generateAudioData(source_music_book)
         );
     end
     
-    % disp(song_path);
-    sound(audio_data, fs);
-    plot(audio_data);
-    
-    save(song_path, 'audio_data');
-    data_path = song_path;
-    
+    %sound(audio_data, fs);
+    %plot(audio_data);
+    song_path = string(song_path);   % Cell to String
+    save(song_path, 'audio_data', 'fs');
+    %audiowrite(song_path, audio_data, fs);
 
     % DEBUG
-    DEBUG = 1;
+    DEBUG = 0;
     if DEBUG
         disp(root_path);
     end
@@ -81,12 +79,12 @@ function [harm_coef, avg_envelope, one_sec_index] = envType2Parameters(envType, 
     end
     
     % DEBUG
-    DEBUG = 1;
+    DEBUG = 0;
     if DEBUG
-        %plot(avg_envelope);
-%         disp(harm_coef);
-%         disp(one_sec_index);
-%         disp(envType);
+        plot(avg_envelope);
+        disp(harm_coef);
+        disp(one_sec_index);
+        disp(envType);
     end
 end
         
