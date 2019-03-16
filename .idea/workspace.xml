@@ -1,7 +1,101 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="494eedf1-f81a-4345-91b2-d86f9e1f1054" name="Default Changelist" comment="" />
+    <list default="true" id="494eedf1-f81a-4345-91b2-d86f9e1f1054" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/Instrument.fig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/Instrument.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Music_Player-API-zh.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Music_Player-API-zh.md.old1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Music_Player-API-zh.md.old2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Music_Player-API.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/pianoC.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/piano_standard/00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/piano_standard/11.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/piano_standard/21.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/piano_standard/30.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/piano_standard/31.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/piano_standard/40.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/piano_standard/41.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/piano_standard/50.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/piano_standard/51.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/piano_standard/preserved/00.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/piano_standard/preserved/01.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/piano_standard/preserved/10.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/piano_standard/preserved/11.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/piano_standard/preserved/20.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/piano_standard/preserved/21.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/piano_standard/preserved/30.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/piano_standard/preserved/31.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/piano_standard/preserved/40.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/piano_standard/preserved/41.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/piano_standard/preserved/50.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/piano_standard/preserved/51.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/piano_standard/preserved/60.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/piano_standard/preserved/61.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/piano_standard/preserved/70.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/piano_standard/preserved/71.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/piano_standard/preserved/80.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/piano_standard/preserved/81.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/piano_standard/preserved/90.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/piano_standard/preserved/91.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/test.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/try.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/try.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/try1.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core_functions/audioVectComp.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core_functions/beatGene.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core_functions/instrumentPropertyScan.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/function_demos/test_audioVectComp.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/function_demos/test_beatGene.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/function_demos/test_instrumentPropertyScan.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/generic_demo/Canon.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/generic_demo/Most_national_style.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/generic_demo/To_Alice.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/generic_demo/demo.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/generic_demo/play.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/generic_demo/scan.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/generic_demo/soundParse.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/generic_demo/test_music.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui_functions/generateAudioData.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hello.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/matlab_music_config.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/music_book_functions/parseBook.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/music_book_functions/test_book.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/site_for_mp3.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/song_data/test_book.txt.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/song_data/test_book.txt.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sound_materials/piano/pianoC.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sound_materials/piano/piano_17.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sound_materials/piano/piano_47.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sound_materials/piano/piano_73.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sound_materials/piano_standard/00.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sound_materials/piano_standard/01.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sound_materials/piano_standard/10.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sound_materials/piano_standard/11.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sound_materials/piano_standard/20.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sound_materials/piano_standard/21.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sound_materials/piano_standard/30.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sound_materials/piano_standard/31.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sound_materials/piano_standard/40.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sound_materials/piano_standard/41.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sound_materials/piano_standard/50.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sound_materials/piano_standard/51.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sound_materials/piano_standard/60.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sound_materials/piano_standard/61.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sound_materials/piano_standard/70.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sound_materials/piano_standard/71.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sound_materials/piano_standard/80.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sound_materials/piano_standard/81.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sound_materials/piano_standard/90.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sound_materials/piano_standard/91.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sound_materials/uncategorized/11.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sound_materials/uncategorized/21.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sound_materials/uncategorized/31.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sound_materials/uncategorized/41.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sound_materials/uncategorized/51.mp3" beforeDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +133,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/Matlab-Music" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -51,7 +145,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-9" />
     <option name="y" value="-9" />
     <option name="width" value="1938" />
@@ -239,15 +333,15 @@
       <workItem from="1552212276834" duration="1488000" />
       <workItem from="1552225177779" duration="4442000" />
       <workItem from="1552730620650" duration="1261000" />
-      <workItem from="1552735109457" duration="560000" />
+      <workItem from="1552735109457" duration="1092000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27228000" />
+    <option name="totallyTimeSpent" value="27760000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.211126" />
