@@ -93,7 +93,7 @@ function note_scale = noteScale(note_base, note_offset, scale)
         note_scale = note_scale - 1;
     end
     
-    note_scale = note_scale + 12 * (str2num(scale));
+    note_scale = note_scale + 12 * (str2nqqqum(scale));
 end
 
 function is_chord = isChord(label)
