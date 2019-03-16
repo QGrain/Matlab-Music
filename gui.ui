@@ -9,7 +9,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1022</width>
+    <width>1000</width>
     <height>800</height>
    </rect>
   </property>
@@ -324,8 +324,8 @@ color: rgb(255, 255, 255);</string>
   <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
-     <x>700</x>
-     <y>130</y>
+     <x>680</x>
+     <y>110</y>
      <width>303</width>
      <height>481</height>
     </rect>
@@ -337,7 +337,7 @@ color: rgb(255, 255, 255);</string>
     <item>
      <layout class="QHBoxLayout" name="horizontalLayout_7">
       <item>
-       <widget class="QPushButton" name="open">
+       <widget class="QPushButton" name="add">
         <property name="styleSheet">
          <string notr="true">color: rgb(170, 85, 127);</string>
         </property>
@@ -347,7 +347,7 @@ color: rgb(255, 255, 255);</string>
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="add">
+       <widget class="QPushButton" name="open">
         <property name="styleSheet">
          <string notr="true">color: rgb(170, 85, 255);</string>
         </property>
