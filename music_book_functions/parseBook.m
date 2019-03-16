@@ -57,10 +57,10 @@ function [key envType] = transformKey(note_base, note_offset, scale)
         key = ref_freq * 2^((absolute_scale - ref_scale)/12);
         
         minus = absolute_scale - noteScale('C', '-', scale);
-        if minus < 6
-            envType = (scale-'0') * 2 + 1;
+        if minus <= 6
+            envType = (scale-'0') * 2 - 1 ;
         else
-            envType = (scale-'0') * 2 + 2;
+            envType = (scale-'0') * 2;
         end
     end
 end
@@ -93,7 +93,7 @@ function note_scale = noteScale(note_base, note_offset, scale)
         note_scale = note_scale - 1;
     end
     
-    note_scale = note_scale + 12 * (str2nqqqum(scale));
+    note_scale = note_scale + 12 * (str2num(scale));
 end
 
 function is_chord = isChord(label)
