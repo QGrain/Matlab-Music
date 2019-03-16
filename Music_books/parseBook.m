@@ -1,13 +1,12 @@
 %Usage: [basic_info book_single] = parseBook(filename)
-%   'basic_info' has the followings:
-%       - speed
-%       - 每小节几拍
-%       - 几分音符为一拍
-%   'book_single'has the followings:
-%       - key
-%       - time
+%   'book_single'has the following members:
+%       - key:     The frequency of current beat.
+%       - time:    How long a period is between this and next beat.
+%       - isChord: Determines whether this beat is chord or not.
+%       - envType: Designates which music example to use.
 
-function [basic_info book_single_beat] = parseBook(filename) 
+% function [basic_info book_single_beat] = parseBook(filename) 
+function book_single_beat = book_single_beat(filename)
 
     %initialization
     book = [];
@@ -23,26 +22,27 @@ function [basic_info book_single_beat] = parseBook(filename)
         tline = fgetl(fid);
         book = [book tline ' '];
     end
+    fclose(fid);
 
     book = deblank(book); %remove the head-blank and tail-blank. 
     %parse '/', and complete book_info
     if book(1) == '/'
-        basic_info = [basic_info; uint8(book(2)-48)];
+        basic_info = [basic_info; str2num(book(2))];
         book = book(4:end);
     end
     
     %split the string into single beat by ' '.
-    book_cell = regexp(book, ' ', 'split');
-
-    for j = 1:length(book_cell)
-        [key envType] = transformKey(book_cell{j}(1), book_cell{j}(2), book_cell{j}(3));
+    book_cells = regexp(book, ' ', 'split');
+    
+    for j = 1:length(book_cells)
+        [key envType] = transformKey(book_cells{j}(1), book_cells{j}(2), book_cells{j}(3));
         book_single_beat(j).key = key;
         book_single_beat(j).envType = envType;
-        book_single_beat(j).isChord = isChord(book_cell{j}(4));
-        book_single_beat(j).time = book_cell{j}(5);
+        book_single_beat(j).isChord = isChord(book_cells{j}(4));   % When the fourth character isn't '_', then it's chord
+        book_single_beat(j).time = getTime(str2num(book_cells{j}(5)), basic_info);
     end
     
-    fclose(fid);
+
 end
 
 function [key envType] = transformKey(note_base, note_offset, scale)
@@ -66,6 +66,7 @@ function [key envType] = transformKey(note_base, note_offset, scale)
 end
 
 function note_scale = noteScale(note_base, note_offset, scale)
+    % Do conversions between the tags and the notes 
     switch (note_base)
         case 'C'
             note_scale = 1;
@@ -92,13 +93,21 @@ function note_scale = noteScale(note_base, note_offset, scale)
         note_scale = note_scale - 1;
     end
     
-    note_scale = note_scale + 12 * (scale-'0');
+    note_scale = note_scale + 12 * (str2num(scale));
 end
 
 function is_chord = isChord(label)
+    % Check if it's chord or not according to the label
     if label == '_'
         is_chord = 0;
     else
         is_chord = 1;
     end
 end
+
+function time = getTime(timeLabel, basic_info)
+    % This function converts the timeLabel into time lantency
+    time = 60.0 / basic_info(1) * 2^(1 - timeLabel) / basic_info(3);
+end
+    
+    
