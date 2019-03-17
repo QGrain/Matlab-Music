@@ -42,6 +42,7 @@ function [data_path] = generateAudioData(source_music_book)
     %plot(audio_data);
     song_path = string(song_path);   % Cell to String
     save(song_path, 'audio_data', 'fs');
+    sound(audio_data, fs);
     %audiowrite(song_path, audio_data, fs);
 
     % DEBUG
@@ -61,9 +62,9 @@ function [harm_coef, avg_envelope, one_sec_index] = envType2Parameters(envType, 
     firstChar = num2str(firstChar);
     
     % DEBUG
-    disp('next:');
-    disp(envType);
-    disp(strcat(firstChar, secondChar));
+%     disp('next:');
+%     disp(envType);
+%     disp(strcat(firstChar, secondChar));
     
     % React accordingly to either circumstances.
     asset_path = strcat(asset_path, firstChar, secondChar, '.mat');
