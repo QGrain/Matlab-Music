@@ -50,7 +50,7 @@ background-repeat:no-repeat;
 
 }</string>
   </property>
-  <widget class="QPushButton" name="pushButton_4">
+  <widget class="QPushButton" name="forward">
    <property name="geometry">
     <rect>
      <x>10</x>
@@ -1139,6 +1139,9 @@ padding:6px;
     <property name="inputMethodHints">
      <set>Qt::ImhNone</set>
     </property>
+    <property name="text">
+     <string/>
+    </property>
    </widget>
    <widget class="QPushButton" name="pushButton_11">
     <property name="geometry">
@@ -1393,7 +1396,7 @@ color:rgba(0,0,0,100);
      <string/>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_3">
+   <widget class="QPushButton" name="next">
     <property name="geometry">
      <rect>
       <x>230</x>
@@ -1449,7 +1452,7 @@ background-position:center center;
     <property name="styleSheet">
      <string notr="true">QPushButton
 {
-background-image: url(:/image/image/image/播放.png);
+background-image: url(:/image/image/image/play.png);
 background-repeat:no-repeat;
 background-position:center center;
 border:none;
@@ -1460,8 +1463,6 @@ QPushButton:hover{
 background-repeat:no-repeat;
 background-position:center center;
 background-image:url(:/image/image/image-hover/pase-hover.png);
-
-
 }
 QPushButton:pressed{
 background-repeat:no-repeat;
@@ -1694,9 +1695,47 @@ color: rgb(75, 75, 75);</string>
      <string/>
     </property>
    </widget>
+   <widget class="QPushButton" name="add">
+    <property name="geometry">
+     <rect>
+      <x>320</x>
+      <y>60</y>
+      <width>32</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton
+{
+background-image: url(:/image/image/image/add.png);
+background-repeat:no-repeat;
+background-position:center center;
+border:none;
+
+}
+
+QPushButton:hover{
+
+	background-image: url(:/image/image/image-hover/add-hover.png);
+background-repeat:no-repeat;
+background-position:center center;
+
+
+}
+QPushButton:pressed{
+background-image: url(:/image/image/image/add.png);
+background-repeat:no-repeat;
+background-position:center center;
+
+}</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
   </widget>
   <zorder>frame</zorder>
-  <zorder>pushButton_4</zorder>
+  <zorder>forward</zorder>
   <zorder>stackedWidget</zorder>
  </widget>
  <layoutdefault spacing="6" margin="11"/>

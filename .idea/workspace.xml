@@ -3,14 +3,18 @@
   <component name="ChangeListManager">
     <list default="true" id="494eedf1-f81a-4345-91b2-d86f9e1f1054" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Matlab-Music" beforeDir="false" afterPath="$PROJECT_DIR$/Matlab-Music" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Matlab-Music/core_functions/instrumentPropertyScan.m" beforeDir="false" afterPath="$PROJECT_DIR$/Matlab-Music/core_functions/instrumentPropertyScan.m" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Matlab-Music/gui_functions/generateAudioData.m" beforeDir="false" afterPath="$PROJECT_DIR$/Matlab-Music/gui_functions/generateAudioData.m" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Matlab-Music/matlab_music_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/Matlab-Music/matlab_music_config.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Matlab-Music/music_book_functions/parseBook.m" beforeDir="false" afterPath="$PROJECT_DIR$/Matlab-Music/music_book_functions/parseBook.m" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Matlab-Music/song_data/test_book.txt.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Matlab-Music/song_data/test_book.txt.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gui.py" beforeDir="false" afterPath="$PROJECT_DIR$/gui.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gui.ui" beforeDir="false" afterPath="$PROJECT_DIR$/gui.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/image.qrc" beforeDir="false" afterPath="$PROJECT_DIR$/image.qrc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/image_rc.py" beforeDir="false" afterPath="$PROJECT_DIR$/image_rc.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/widget.py" beforeDir="false" afterPath="$PROJECT_DIR$/widget.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/widget.ui" beforeDir="false" afterPath="$PROJECT_DIR$/widget.ui" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,7 +25,7 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/PyQtGUI$gui.coverage" NAME="gui Coverage Results" MODIFIED="1552191547584" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/PyQtGUI$PyQt5_Button.coverage" NAME="PyQt5_Button Coverage Results" MODIFIED="1552226274663" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/AppData/Local/Temp/Rar$DIa0.132" />
-    <SUITE FILE_PATH="coverage/PyQtGUI$main.coverage" NAME="main Coverage Results" MODIFIED="1552765292646" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/PyQtGUI$main.coverage" NAME="main Coverage Results" MODIFIED="1552816389189" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/PyQtGUI$untitled.coverage" NAME="untitled Coverage Results" MODIFIED="1552105929465" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/PyQtGUI$test.coverage" NAME="test Coverage Results" MODIFIED="1552193733240" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
@@ -30,20 +34,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="47" column="30" selection-start-line="47" selection-start-column="30" selection-end-line="47" selection-end-column="30" />
+            <state relative-caret-position="304">
+              <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/widget.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="350" column="33" selection-start-line="350" selection-start-column="33" selection-end-line="352" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -74,14 +69,16 @@
         <option value="D:/华科大二下/课外/娱乐/PyQt5_Button/PyQt5_Button.py" />
         <option value="$PROJECT_DIR$/Matlab-Music/matlab_music_config.json" />
         <option value="$PROJECT_DIR$/Matlab-Music/gui_functions/generateAudioData.m" />
+        <option value="$PROJECT_DIR$/save_txt.py" />
         <option value="$PROJECT_DIR$/main.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="952" />
-    <option name="width" value="977" />
-    <option name="height" value="1038" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="272" />
+    <option name="y" value="21" />
+    <option name="width" value="1588" />
+    <option name="height" value="979" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -265,23 +262,24 @@
       <workItem from="1552212276834" duration="1488000" />
       <workItem from="1552225177779" duration="4442000" />
       <workItem from="1552730620650" duration="1261000" />
-      <workItem from="1552735109457" duration="25201000" />
+      <workItem from="1552735109457" duration="25981000" />
+      <workItem from="1552791887141" duration="962000" />
+      <workItem from="1552804785702" duration="10362000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="51869000" />
+    <option name="totallyTimeSpent" value="63973000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
+    <frame x="218" y="17" width="1270" height="783" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.211126" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26650164" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.33286119" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32872504" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3609831" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -417,17 +415,42 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Matlab-Music/Music_Player-API-zh.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/widget.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="350" column="33" selection-start-line="350" selection-start-column="33" selection-end-line="352" selection-end-column="4" />
+        <state relative-caret-position="501">
+          <caret line="350" column="33" selection-start-line="350" selection-start-column="33" selection-end-line="350" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.spec">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/text_txt.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="11" column="34" lean-forward="true" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/save_txt.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" column="16" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="47" column="30" selection-start-line="47" selection-start-column="30" selection-end-line="47" selection-end-column="30" />
+        <state relative-caret-position="304">
+          <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>

@@ -1,5 +1,5 @@
 import sys
-
+import re
 from prompt_toolkit.eventloop import event
 
 import gui
@@ -10,19 +10,33 @@ import matlab.engine
 #from gui import Ui_Dialog
 import widget
 from widget import Ui_Widget
-from PyQt5.QtWidgets import QApplication, QDialog, QWidget, QMenu, QAction
+from PyQt5.QtWidgets import QApplication, QDialog, QWidget, QMenu, QAction, QFileDialog, QMainWindow
 from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QIcon
+import os
+from save_txt import Ui_new_txt
 from PyQt5.QtSql import QSqlQuery
 
 eng = matlab.engine.start_matlab()
 #eng.matlab.software(#maybe(nargout = 0))
 
-#class mygui(Ui_Dialog):
+class save_txt_dialog(Ui_new_txt):
+    def setupUi(self, MAINWINDOW):
+        Ui_new_txt.setupUi(self, MAINWINDOW)
+        self.save.clicked.connect(self.saveclick)
+
+    def saveclick(self):
+        filename = QFileDialog.getSaveFileName(None, 'New_Txt', os.getenv('HOME'), 'TXT（*.txt')
+        if(filename[0] != ''):
+            with open(filename[0], 'w') as f:
+                my_text = self.textEdit.toPlainText()
+                f.write(my_text)
+
+
+
 class mygui(Ui_Widget):
     destinationPath = "None"
     static = "stop"
-
 
     def setupUi(self, Qwidget):
         #Ui_Dialog.setupUi(self,Dialog)
@@ -32,10 +46,18 @@ class mygui(Ui_Widget):
         self.play.clicked.connect(self.playclick)
         #self.quick.clicked.connect(self.quickclick)
         #self.slow.clicked.connect(self.slowclick)
-        #self.add.clicked.connect(self.addclick)
         self.open.clicked.connect(self.openclick)
+        self.forward.clicked.connect(self.forwardclick)
+        self.next.clicked.connect(self.nextclick)
         self.frame.setContextMenuPolicy(Qt.CustomContextMenu)
         self.frame.customContextMenuRequested.connect(self.custom_right_menu)
+
+    def forwardclick(self):
+        print("forward")
+
+    def nextclick(self):
+        print("next")
+
 
     def custom_right_menu(self, pos):
 
@@ -43,10 +65,10 @@ class mygui(Ui_Widget):
         changemainbackground = QAction()
         changemainbackground.setText("更换背景")
         changemainbackground.setIcon(QIcon(":/image/image/pf5.png"))
-        changemainbackground.setShortcut("Ctrl+C")
+        changemainbackground.setShortcut("Ctrl+Q")
         changemainbackground.triggered.connect(self.change_main_background)
         opt1 = menu.addAction(changemainbackground)
-        opt2 = menu.addMenu("menu2")
+        #opt2 = menu.addMenu("menu2")
 
         action = menu.exec_(self.frame.mapToGlobal(pos))
         '''
@@ -106,6 +128,7 @@ class mygui(Ui_Widget):
             ui.play.setStyleSheet(self.PaseStyle())
             ui.play.setToolTip("暂停")
             self.static = "play"
+            print(self.destinationPath)
             eng.playMat(self.destinationPath, nargout=0)
         else:
             ui.play.setStyleSheet(self.PlayStyle())
@@ -146,9 +169,6 @@ class mygui(Ui_Widget):
     def slowclick(self):
         print("slow")
 
-    def addclick(self):
-        print("add")
-
 
     def openclick(self):
         root = tk.Tk()
@@ -159,17 +179,35 @@ class mygui(Ui_Widget):
         else:
             filename = filename.split("\\")
             filename = filename[len(filename) - 1]
-            transitory = eng.generateAudioData(filename)
-            self.destinationPath = transitory[0]
-            print("open")
+            if(os.path.exists(".\\Matlab-Music\\song_data\\" + filename + ".mat")):    #如果mat文件存在
+                print("existence")
+                self.destinationPath = "F:\\PyQtGUI\\Matlab-Music\\song_data\\" + filename + ".mat"
+            else:
+                print("no existence")
+                transitory = eng.generateAudioData(filename)
+                self.destinationPath = transitory[0]
+        print("open")
 
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
-    MainWindow = QWidget()
+    mainWindow = QWidget()
+    saveMainWindow = QMainWindow()
     #ui = Ui_Widget()
+    savetxt = save_txt_dialog()
     ui = mygui()
-    ui.setupUi(MainWindow)
-    MainWindow.show()
+    ui.setupUi(mainWindow)
+    savetxt.setupUi(saveMainWindow)
+    mainWindow.show()
+
+    ui.add.clicked.connect(saveMainWindow.show)
     sys.exit(app.exec_())
-    print(openclick())
+
+
+
+"""
+        filename = QFileDialog.getOpenFileName()
+        with open(filename[0], 'r') as f:
+            my_txt = f.read()
+            self.textEdit.setPlainText(my_txt)
+"""

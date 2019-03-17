@@ -28,10 +28,10 @@ class Ui_Widget(object):
 "\n"
 "\n"
 "}")
-        self.pushButton_4 = QtWidgets.QPushButton(Widget)
-        self.pushButton_4.setGeometry(QtCore.QRect(10, 648, 48, 48))
-        self.pushButton_4.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.pushButton_4.setStyleSheet("QPushButton\n"
+        self.forward = QtWidgets.QPushButton(Widget)
+        self.forward.setGeometry(QtCore.QRect(10, 648, 48, 48))
+        self.forward.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.forward.setStyleSheet("QPushButton\n"
 "{\n"
 "background-image: url(:/image/image/image/pre.png);\n"
 "background-repeat:no-repeat;\n"
@@ -55,8 +55,8 @@ class Ui_Widget(object):
 "\n"
 "}\n"
 "")
-        self.pushButton_4.setText("")
-        self.pushButton_4.setObjectName("pushButton_4")
+        self.forward.setText("")
+        self.forward.setObjectName("forward")
         self.stackedWidget = QtWidgets.QStackedWidget(Widget)
         self.stackedWidget.setEnabled(True)
         self.stackedWidget.setGeometry(QtCore.QRect(12, 110, 350, 531))
@@ -747,6 +747,7 @@ class Ui_Widget(object):
 "padding:6px;\n"
 "}")
         self.lineEdit.setInputMethodHints(QtCore.Qt.ImhNone)
+        self.lineEdit.setText("")
         self.lineEdit.setObjectName("lineEdit")
         self.pushButton_11 = QtWidgets.QPushButton(self.frame)
         self.pushButton_11.setGeometry(QtCore.QRect(80, 60, 32, 32))
@@ -917,10 +918,10 @@ class Ui_Widget(object):
 "")
         self.pushButton_20.setText("")
         self.pushButton_20.setObjectName("pushButton_20")
-        self.pushButton_3 = QtWidgets.QPushButton(self.frame)
-        self.pushButton_3.setGeometry(QtCore.QRect(230, 638, 48, 48))
-        self.pushButton_3.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.pushButton_3.setStyleSheet("QPushButton\n"
+        self.next = QtWidgets.QPushButton(self.frame)
+        self.next.setGeometry(QtCore.QRect(230, 638, 48, 48))
+        self.next.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.next.setStyleSheet("QPushButton\n"
 "{\n"
 "background-image: url(:/image/image/image/next.png);\n"
 "background-repeat:no-repeat;\n"
@@ -943,14 +944,14 @@ class Ui_Widget(object):
 "\n"
 "}\n"
 "")
-        self.pushButton_3.setText("")
-        self.pushButton_3.setObjectName("pushButton_3")
+        self.next.setText("")
+        self.next.setObjectName("next")
         self.play = QtWidgets.QPushButton(self.frame)
         self.play.setGeometry(QtCore.QRect(118, 640, 48, 48))
         self.play.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.play.setStyleSheet("QPushButton\n"
 "{\n"
-"background-image: url(:/image/image/image/播放.png);\n"
+"background-image: url(:/image/image/image/play.png);\n"
 "background-repeat:no-repeat;\n"
 "background-position:center center;\n"
 "border:none;\n"
@@ -961,8 +962,6 @@ class Ui_Widget(object):
 "background-repeat:no-repeat;\n"
 "background-position:center center;\n"
 "background-image:url(:/image/image/image-hover/pase-hover.png);\n"
-"\n"
-"\n"
 "}\n"
 "QPushButton:pressed{\n"
 "background-repeat:no-repeat;\n"
@@ -1091,8 +1090,35 @@ class Ui_Widget(object):
 "color: rgb(75, 75, 75);")
         self.label_4.setText("")
         self.label_4.setObjectName("label_4")
+        self.add = QtWidgets.QPushButton(self.frame)
+        self.add.setGeometry(QtCore.QRect(320, 60, 32, 32))
+        self.add.setStyleSheet("QPushButton\n"
+"{\n"
+"background-image: url(:/image/image/image/add.png);\n"
+"background-repeat:no-repeat;\n"
+"background-position:center center;\n"
+"border:none;\n"
+"\n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"\n"
+"    background-image: url(:/image/image/image-hover/add-hover.png);\n"
+"background-repeat:no-repeat;\n"
+"background-position:center center;\n"
+"\n"
+"\n"
+"}\n"
+"QPushButton:pressed{\n"
+"background-image: url(:/image/image/image/add.png);\n"
+"background-repeat:no-repeat;\n"
+"background-position:center center;\n"
+"\n"
+"}")
+        self.add.setText("")
+        self.add.setObjectName("add")
         self.frame.raise_()
-        self.pushButton_4.raise_()
+        self.forward.raise_()
         self.stackedWidget.raise_()
 
         self.retranslateUi(Widget)

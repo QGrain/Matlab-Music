@@ -1,4 +1,4 @@
-<RCC>
+﻿<RCC>
     <qresource prefix="/image">
         <file>image/ooopic_1500873206.png</file>
         <file>image/ooopic_1500873213.png</file>
@@ -205,5 +205,6 @@
         <file>ooopic_1520340986.ico</file>
         <file>image/background/bg7.jpg</file>
         <file>image/background/bg8.jpg</file>
+        <file>image/background/bg9.jpg</file>
     </qresource>
 </RCC>
