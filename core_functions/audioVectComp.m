@@ -9,12 +9,19 @@ function [ last_end_index, song_array ] = audioVectComp(song_array, beat_array, 
 %     hold on 
 %     plot(beat_array);
 %     hold off
-    
-	padSize = max([len_beat_array+last_end_index len_song_arr last_end_index+target_length]);
-    %song_array = padarray(song_array, [1, padSize], 0, 'post');
-    song_array = [song_array zeros(1, padSize-len_song_arr)];   % Appended to padSize
-    %beat_array = padarray(beat_array, [1, padSize], 0, 'pre');
-    beat_array = [zeros(1, last_end_index) beat_array zeros(1, padSize-last_end_index-len_beat_array)]; % Align to last_end_index
+
+    padSize = max([len_beat_array+last_end_index len_song_arr last_end_index+target_length]);
+    if strcmp(comp_mode, 'add')
+        %song_array = padarray(song_array, [1, padSize], 0, 'post');
+        song_array = [song_array zeros(1, padSize-len_song_arr)];   % Appended to padSize
+        %beat_array = padarray(beat_array, [1, padSize], 0, 'pre');
+        beat_array = [zeros(1, last_end_index) beat_array zeros(1, padSize-last_end_index-len_beat_array)]; % Align to last_end_index
+    elseif strcmp(comp_mode, 'cut')
+        song_array = [song_array(1:padSize-len_beat_array) zeros(1, len_beat_array)];
+        beat_array = [zeros(1, last_end_index) beat_array zeros(1, padSize-last_end_index-len_beat_array)];
+    else
+        disp('Error composing mode!');
+    end
     
     % Addition, currently default is "ADD" mode
     power = 1;

@@ -12,7 +12,7 @@ function [data_path] = generateAudioData(source_music_book)
         root_path = strcat(root_path, '/');
     end
     
-    instrument = 'piano_standard';
+    instrument = 'violin_standard';
     
     sourcePathComponents = regexp(source_music_book, '/', 'split');
     song_path = strcat(root_path, 'song_data/', sourcePathComponents(end), '.mat');

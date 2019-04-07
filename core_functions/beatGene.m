@@ -3,7 +3,7 @@ function beat_array = beatGene(avg_envelope, one_sec_index, harm_coef, key, fs)
     len = length(avg_envelope);
     newLen = round(len/one_sec_index*fs);
     transformation_indexes = ceil((1:newLen)*one_sec_index/fs);  % Avoid 0 being index.
-    avg_envelope = [avg_envelope; avg_envelope(end)];  % Avoid indexes out of range.
+    avg_envelope = [avg_envelope; avg_envelope(end)];            % Avoid indexes out of range.
     adapted_envelope = transpose(avg_envelope(transformation_indexes));
     
    	% Get some info
