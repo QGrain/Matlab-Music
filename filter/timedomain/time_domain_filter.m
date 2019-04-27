@@ -14,7 +14,7 @@ function AudioData = time_domain_filter(audio, n1, n2, omiga)
     end
     
     for num = [n1:n2]
-        for k = [n1:n2]
+        for k = [n1:num]
             AudioData_left(num) = AudioData_left(num) + audio_left(k)*getHValue(num-k, omiga);
         end
     end
@@ -25,7 +25,7 @@ function AudioData = time_domain_filter(audio, n1, n2, omiga)
         end
     end
     %AudioData_left = []
-    AudioData = [AudioData_left, AudioData_right]
+    AudioData = [AudioData_left, AudioData_right];
 end
 
 function hValue = getHValue(n, w)
