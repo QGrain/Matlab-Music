@@ -16,7 +16,7 @@ function [harm_coef, avg_envelope, one_sec_index] = instrumentPropertyScan(filen
     avg_envelope = avg_envelope / max(avg_envelope); % Standarization
     
     % Fourier Transformation
-    fs = one_sec_index;
+    fs = one_sec_index;  
     Y = fft(audio); % Y are complexes
     L = length(audio);
     f = fs*(0:(L/2))/L;
